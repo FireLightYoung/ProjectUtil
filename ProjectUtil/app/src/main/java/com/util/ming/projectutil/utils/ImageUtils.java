@@ -1,4 +1,4 @@
-package com.example.ming.mvptest.util;
+package com.util.ming.projectutil.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
