@@ -1,4 +1,4 @@
-package com.example.ming.mvptest.util;
+package com.util.ming.projectutil.utils;
 
 import android.util.Log;
 
@@ -26,19 +26,28 @@ public class FileUtils {
      * @param img      图片数据流
      * @param fileName 文件保存时的名称
      */
-    public static void writeImageToDisk(String dirUrl, String fileName, byte[] img) throws Exception {
+    public static void writeImageToDisk(String dirUrl, String fileName, byte[] img) throws IOException {
+
+        FileOutputStream fops = null;
         try {
             File filedir = new File(dirUrl);
             if (!filedir.exists()) {
                 filedir.mkdir();
             }
             File file = new File(dirUrl + File.separator + fileName);
-            FileOutputStream fops = new FileOutputStream(file);
+            fops = new FileOutputStream(file);
             fops.write(img);
             fops.flush();
-            fops.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw e;
+        } finally {
+            if (fops != null) {
+                try {
+                    fops.close();
+                } catch (Exception e) {
+
+                }
+            }
         }
     }
 
@@ -50,19 +59,29 @@ public class FileUtils {
      * @param string
      * @throws Exception
      */
-    public static void StringToFile(String dirUrl, String fileName, String string) throws Exception {
+    public static void StringToFile(String dirUrl, String fileName, String string) throws IOException {
+        FileOutputStream fops = null;
         try {
             File filedir = new File(dirUrl);
             if (!filedir.exists()) {
                 filedir.mkdir();
             }
             File file = new File(dirUrl + File.separator + fileName);
-            FileOutputStream fops = new FileOutputStream(file);
+            fops = new FileOutputStream(file);
             fops.write(string.getBytes());
             fops.flush();
             fops.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw e;
+        } finally {
+            if (fops != null) {
+                try {
+                    fops.close();
+                } catch (Exception e) {
+
+                }
+
+            }
         }
     }
 
@@ -73,7 +92,7 @@ public class FileUtils {
      * @return
      * @throws Exception
      */
-    public static String FileToString(String Path) throws Exception {
+    public static String FileToString(String Path) throws IOException {
         InputStream is = null;
         ByteArrayOutputStream baos = null;
         String str = null;
@@ -89,14 +108,22 @@ public class FileUtils {
                 baos.write(i);
             }
             str = baos.toString();
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw e;
         } finally {
             if (baos != null) {
-                baos.close();
+                try {
+                    baos.close();
+                } catch (Exception e) {
+
+                }
             }
             if (is != null) {
-                is.close();
+                try {
+                    is.close();
+                } catch (Exception e) {
+
+                }
             }
         }
         return str;
@@ -109,7 +136,7 @@ public class FileUtils {
      * @return
      * @throws Exception
      */
-    public static String FileToString2(String Path) throws Exception {
+    public static String FileToString2(String Path) throws IOException {
         StringBuffer sb = null;
         Reader reader = null;
         BufferedReader br = null;
@@ -128,11 +155,19 @@ public class FileUtils {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                reader.close();
-                br.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         return sb.toString();
@@ -145,7 +180,7 @@ public class FileUtils {
      * @param newPath String 复制后路径 如：f:/fqf.txt
      * @return boolean
      */
-    public static void copyFile(String oldPath, String newPath) throws Exception {
+    public static void copyFile(String oldPath, String newPath) throws IOException {
         InputStream inStream = null;
         FileOutputStream fs = null;
         try {
@@ -163,10 +198,19 @@ public class FileUtils {
             throw e;
         } finally {
             if (inStream != null) {
-                inStream.close();
+                try {
+                    inStream.close();
+                } catch (Exception e) {
+
+                }
+
             }
             if (fs != null) {
-                fs.close();
+                try {
+                    fs.close();
+                } catch (Exception e) {
+
+                }
             }
         }
 
@@ -175,22 +219,38 @@ public class FileUtils {
     /**
      * 获得指定文件的byte数组
      */
-    public static byte[] getBytes(String filePath) throws Exception {
+    public static byte[] getBytes(String filePath) throws IOException {
+        FileInputStream fis = null;
+        ByteArrayOutputStream bos = null;
         byte[] buffer = null;
         try {
             File file = new File(filePath);
-            FileInputStream fis = new FileInputStream(file);
-            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);
+            fis = new FileInputStream(file);
+            bos = new ByteArrayOutputStream(1000);
             byte[] b = new byte[1000];
             int n;
             while ((n = fis.read(b)) != -1) {
                 bos.write(b, 0, n);
             }
-            fis.close();
-            bos.close();
             buffer = bos.toByteArray();
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw e;
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (Exception e) {
+
+                }
+            }
+            if (bos != null) {
+                try {
+                    bos.close();
+                } catch (Exception e) {
+
+                }
+            }
+
         }
         return buffer;
     }
@@ -202,7 +262,7 @@ public class FileUtils {
      * @param file
      * @return
      */
-    public String readTxtFile(File file) throws Exception {
+    public String readTxtFile(File file) throws IOException {
         String content = ""; // 文件内容字符串
         // 如果path是传递过来的参数，可以做一个非目录的判断
         if (file.isDirectory()) {
@@ -223,25 +283,29 @@ public class FileUtils {
                     }
 
                 }
-            } catch (java.io.FileNotFoundException e) {
-                Log.d("TestFile", "The File doesn't not exist.");
-                throw e;
             } catch (IOException e) {
-                Log.d("TestFile", e.getMessage());
                 throw e;
             } finally {
-                try {
-                    if (instream != null)
+                if (instream != null) {
+                    try {
                         instream.close();
-                    if (inputreader != null)
-                        inputreader.close();
-                    if (buffreader != null)
-                        buffreader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-                if (file.exists() && !file.isDirectory()) {
-                    file.delete();
+                if (inputreader != null) {
+                    try {
+                        inputreader.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (buffreader != null) {
+                    try {
+                        buffreader.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
@@ -256,7 +320,7 @@ public class FileUtils {
      * @param f    - 指定的目录
      * @param buff
      */
-    public boolean saveByteToFile(File f, byte[] buff) {
+    public boolean saveByteToFile(File f, byte[] buff) throws IOException {
         FileOutputStream fOut = null;
         try {
             if (buff != null && buff.length != 0) {
@@ -269,22 +333,15 @@ public class FileUtils {
                 fOut.flush();
             }
             return true;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return false;
         } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+            throw e;
         } finally {
-            try {
-                if (fOut != null) {
+            if (fOut != null) {
+                try {
                     fOut.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
         }
     }
