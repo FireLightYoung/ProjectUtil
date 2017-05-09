@@ -25,6 +25,7 @@ public class MVPActivity extends Activity implements ILoginView, View.OnClickLis
     private EditText textName;
     private EditText textPassword;
     private TextView textview;
+    private TextView textview_message;
 
     LoginPresenter loginPresenter;
 
@@ -48,7 +49,8 @@ public class MVPActivity extends Activity implements ILoginView, View.OnClickLis
         textPassword = (EditText) findViewById(R.id.editTextpassword);
 
         textview = (TextView) findViewById(R.id.textView);
-        textview.setText("账号:zhangsan 密码 123");
+        textview_message = (TextView) findViewById(R.id.textView_message);
+        textview_message.setText("账号:zhangsan 密码 123");
         buttonLogin.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
 
@@ -88,18 +90,18 @@ public class MVPActivity extends Activity implements ILoginView, View.OnClickLis
     public void clearSuccess() {
 
         textview.setText("清除成功");
+        clearText();
     }
 
     @Override
     public void clearFailed() {
-        textview.setText("清除成功");
+        textview.setText("清除失败");
     }
 
     @Override
     public void clearText() {
         textName.setText("");
         textPassword.setText("");
-        textview.setText("账号:zhangsan 密码 123");
     }
 
     @Override
