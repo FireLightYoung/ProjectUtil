@@ -56,6 +56,7 @@ public class LoginPresenter {
 
 
     public void clear() {
+        loginView.ShowDialog();
         loginBiz.clear(new OnClearListener() {
 
             @Override

@@ -5,6 +5,7 @@ import com.util.ming.projectutil.demo.mvp.entity.User;
 
 /**
  * Created by ming on 16/11/29.
+ * moudel
  */
 public class LoginBiz implements ILoginBiz {
 
@@ -16,7 +17,7 @@ public class LoginBiz implements ILoginBiz {
             public void run() {
                 super.run();
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -37,7 +38,7 @@ public class LoginBiz implements ILoginBiz {
             public void run() {
                 super.run();
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
