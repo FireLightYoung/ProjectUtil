@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.util.ming.projectutil"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            zipAlignEnabled true
+            minifyEnabled true
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize '8g'
+        keepRuntimeAnnotatedClasses false
+    }
+}
+
+dependencies {
+//    compile project(':swipebacklayout')
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+//    compile 'com.android.support:support-v4:22.0.0'
+
+
+    compile project(path: ':swipebacklayout')
+}
