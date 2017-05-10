@@ -81,6 +81,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     public void addDemo() {
         addMVPDemo();
         addRxJavaDemo();
+        addFrescoDemo();
+        addAutoFocusDemo();
     }
 
     public void addMVPDemo() {
@@ -96,6 +98,22 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         map.put("ItemTitle", "RxJava Demo");
         map.put("ItemText", "一个采用RxJava2.0进行响应式开发的例子");
         map.put("ItemActivity", "com.util.ming.projectutil.demo.rxjava.RxJavaActivity");
+        mylist.add(map);
+    }
+
+    public void addFrescoDemo() {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("ItemTitle", "Fresco Demo");
+        map.put("ItemText", "一个采用Fresco加载图片的例子");
+        map.put("ItemActivity", "com.util.ming.projectutil.demo.fresco.FrescoActivity");
+        mylist.add(map);
+    }
+
+    public void addAutoFocusDemo() {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("ItemTitle", "AutoFocus Demo");
+        map.put("ItemText", "一个停止当前播放声音的功能");
+        map.put("ItemActivity", "com.util.ming.projectutil.demo.autofocus.AutoFocusActivity");
         mylist.add(map);
     }
 

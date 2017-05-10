@@ -2,6 +2,7 @@ package com.util.ming.projectutil.application;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.util.ming.projectutil.utils.ContextHelper;
 
 /**
@@ -13,5 +14,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         ContextHelper.init(getApplicationContext());
+        Fresco.initialize(this);
     }
 }
