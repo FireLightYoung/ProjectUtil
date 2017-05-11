@@ -24,4 +24,48 @@
         android:layout_marginTop="10dp"
         fresco:placeholderImage="@drawable/ic_launcher" />
 
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_SimpleDraweeView_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/my_image_view"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:backgroundImage="@color/bright_foreground_inverse_material_light"
+        fresco:fadeDuration="300"
+        fresco:failureImage="@drawable/error"
+        fresco:failureImageScaleType="centerInside"
+        fresco:overlayImage="@color/switch_thumb_disabled_material_dark"
+        fresco:placeholderImage="@color/switch_thumb_normal_material_dark"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:pressedStateOverlayImage="@color/ripple_material_light"
+        fresco:progressBarAutoRotateInterval="1000"
+        fresco:progressBarImage="@color/accent_material_dark"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:retryImage="@color/background_material_dark"
+        fresco:retryImageScaleType="centerCrop"
+        fresco:roundAsCircle="false"
+        fresco:roundBottomLeft="false"
+        fresco:roundBottomRight="true"
+        fresco:roundTopLeft="true"
+        fresco:roundTopRight="false"
+        fresco:roundWithOverlayColor="@color/secondary_text_default_material_dark"
+        fresco:roundedCornerRadius="1dp"
+        fresco:roundingBorderColor="@color/secondary_text_default_material_dark"
+        fresco:roundingBorderWidth="2dp" />
+
+    <com.facebook.drawee.view.DraweeView
+        android:id="@+id/my_DraweeView_view"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/my_SimpleDraweeView_view"
+        android:layout_marginTop="10dp"
+        fresco:placeholderImage="@drawable/ic_launcher" />
+
+    <com.facebook.drawee.view.GenericDraweeView
+        android:id="@+id/my_GenericDraweeView_view"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/my_DraweeView_view"
+        android:layout_marginTop="10dp"
+        fresco:placeholderImage="@drawable/ic_launcher" />
 </RelativeLayout>
