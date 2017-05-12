@@ -83,6 +83,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addRxJavaDemo();
         addFrescoDemo();
         addAutoFocusDemo();
+        addRetrofit2Demo();
     }
 
     public void addMVPDemo() {
@@ -114,6 +115,15 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         map.put("ItemTitle", "AutoFocus Demo");
         map.put("ItemText", "一个停止当前播放声音的功能");
         map.put("ItemActivity", "com.util.ming.projectutil.demo.autofocus.AutoFocusActivity");
+        mylist.add(map);
+    }
+
+
+    public void addRetrofit2Demo() {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("ItemTitle", "Retrofit2 Demo");
+        map.put("ItemText", "一个使用Retrofit请求网络的例子");
+        map.put("ItemActivity", "com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity");
         mylist.add(map);
     }
 

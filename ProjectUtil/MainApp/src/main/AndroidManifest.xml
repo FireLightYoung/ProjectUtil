@@ -43,6 +43,12 @@
             android:launchMode="singleTop">
 
         </activity>
+        <activity
+            android:name=".demo.retrofitdemo.Retrofit2Activity"
+            android:label="Retrofit2Activity"
+            android:launchMode="singleTop">
+
+        </activity>
     </application>
 
 </manifest>
