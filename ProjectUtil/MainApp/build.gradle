@@ -30,6 +30,9 @@ dependencies {
     //jar包
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
+    //google-gson
+    compile 'com.google.code.gson:gson:2.7'
+
     //rxJava2.0
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
@@ -41,8 +44,12 @@ dependencies {
     compile project(path: ':swipebacklayout')
 
     //retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.0.0'
-
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    //retrofit-string
+    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    //retrofit-converter-gson
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    
     //fresco------------------------------------------------------------
     compile 'com.facebook.fresco:fresco:0.12.0'
     // 在 API < 14 上的机器支持 WebP 时，需要添加
