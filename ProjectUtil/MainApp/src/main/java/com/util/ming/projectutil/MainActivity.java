@@ -84,6 +84,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addFrescoDemo();
         addAutoFocusDemo();
         addRetrofit2Demo();
+        addCameraDemo();
     }
 
     public void addMVPDemo() {
@@ -124,6 +125,14 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         map.put("ItemTitle", "Retrofit2 Demo");
         map.put("ItemText", "一个使用Retrofit请求网络的例子");
         map.put("ItemActivity", "com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity");
+        mylist.add(map);
+    }
+
+    public void addCameraDemo() {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("ItemTitle", "Camera Demo");
+        map.put("ItemText", "Camera录像，前后摄像头");
+        map.put("ItemActivity", "com.util.ming.projectutil.demo.camerademo.CameraActivity");
         mylist.add(map);
     }
 

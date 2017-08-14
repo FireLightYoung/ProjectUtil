@@ -11,12 +11,13 @@ import com.facebook.drawee.view.DraweeView;
 import com.facebook.drawee.view.GenericDraweeView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.util.ming.projectutil.R;
+import com.util.ming.projectutil.activity.BaseActivity;
 
 /**
  * Created by ming on 17/5/10.
  */
 
-public class FrescoActivity extends Activity {
+public class FrescoActivity extends BaseActivity {
     SimpleDraweeView SimpleDraweeView1;
     SimpleDraweeView SimpleDraweeView2;
     DraweeView draweeView;

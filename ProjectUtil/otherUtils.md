@@ -2,6 +2,6 @@
 
 >图片压缩
 
-熊猫图片压缩 [click here link](https://tinypng.com/)
+[熊猫图片压缩 ](https://tinypng.com/)
 
 >
