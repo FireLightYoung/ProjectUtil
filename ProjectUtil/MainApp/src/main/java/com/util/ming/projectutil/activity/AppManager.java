@@ -11,9 +11,8 @@ import java.util.Stack;
 
 /**
  * 此文件涉及嵌入版，请在同步独立版程序时，同步嵌入版程序
+ * 应用程序 activity 的管理类
  */
-
-//应用程序 activity 的管理类
 public class AppManager extends Application {
 
     private static Stack<Activity> activityStack;
