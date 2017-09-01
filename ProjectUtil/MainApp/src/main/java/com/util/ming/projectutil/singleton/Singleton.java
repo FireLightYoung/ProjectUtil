@@ -1,8 +1,11 @@
 package com.util.ming.projectutil.singleton;
 
+import java.io.Serializable;
+
 /**
  * Created by ming on 17/8/21.
  * 静态内部类，最合适的单例模式实现方法
+ * 但是不支持反序列化生成多个实例，如果避免这个问题的话要用枚举实现单例的形式
  */
 public class Singleton {
     private Singleton() {
@@ -22,4 +25,5 @@ public class Singleton {
         Singleton instance2 = Singleton.getInstance();
         System.out.println(instance == instance2);
     }
+
 }

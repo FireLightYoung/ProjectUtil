@@ -3,9 +3,7 @@ package com.util.ming.projectutil.application;
 import android.app.Application;
 import android.content.Intent;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.util.ming.projectutil.MainActivity;
-import com.util.ming.projectutil.utils.ContextHelper;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 
@@ -18,10 +16,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ContextHelper.init(getApplicationContext());
-        Fresco.initialize(this);
 
-//        Thread.setDefaultUncaughtExceptionHandler(restartHandler); // 程序崩溃时触发线程  以下用来捕获程序崩溃异常
+        Thread.setDefaultUncaughtExceptionHandler(restartHandler); // 程序崩溃时触发线程  以下用来捕获程序崩溃异常
     }// 创建服务用于捕获崩溃异常
 
     private UncaughtExceptionHandler restartHandler = new UncaughtExceptionHandler() {
