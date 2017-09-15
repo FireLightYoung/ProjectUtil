@@ -86,6 +86,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addRetrofit2Demo();
         addCameraDemo();
         addDaggerDemo();
+        addadapterDemo();
     }
 
     public void addMVPDemo() {
@@ -142,6 +143,14 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         map.put("ItemTitle", "Daager2 Demo");
         map.put("ItemText", "Daager2实例");
         map.put("ItemActivity", "com.util.ming.projectutil.demo.dagger.DaggerActivity");
+        mylist.add(map);
+    }
+
+    public void addadapterDemo() {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("ItemTitle", "通用adapter Demo");
+        map.put("ItemText", "通用adapter实例");
+        map.put("ItemActivity", "com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity");
         mylist.add(map);
     }
 

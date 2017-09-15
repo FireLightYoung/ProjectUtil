@@ -52,6 +52,11 @@
             android:label="CameraActivity"
             android:launchMode="singleTop">
         </activity>
+        <activity
+            android:name=".demo.baseadapter.ListViewAdapterActivity"
+            android:label="CameraActivity"
+            android:launchMode="singleTop">
+        </activity>
     </application>
 
 </manifest>
