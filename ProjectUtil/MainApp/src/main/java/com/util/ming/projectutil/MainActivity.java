@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -14,7 +15,13 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.util.ming.projectutil.activity.BaseActivity;
+import com.util.ming.projectutil.demo.autofocus.AutoFocusActivity;
+import com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity;
+import com.util.ming.projectutil.demo.camerademo.CameraActivity;
+import com.util.ming.projectutil.demo.dagger.DaggerActivity;
+import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
+import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
 
 import java.util.ArrayList;
@@ -25,7 +32,7 @@ import java.util.zip.Inflater;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     ListView listview;
-    ArrayList<HashMap<String, String>> mylist;
+    ArrayList<DemoBean> mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +44,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     private void initData() {
-        mylist = new ArrayList<HashMap<String, String>>();
+        mList = new ArrayList<>();
         addDemo();
     }
 
@@ -46,27 +53,16 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     private void initEvent() {
-        SimpleAdapter mSchedule = new SimpleAdapter(this,
-                mylist,
-                R.layout.item_main,
-                new String[]{"ItemTitle", "ItemText"},
-                new int[]{R.id.item_main_txt1, R.id.item_main_txt2});
-        listview.setAdapter(mSchedule);
+        MyAdapter myAdapter = new MyAdapter(mList, this);
+        listview.setAdapter(myAdapter);
         listview.setOnItemClickListener(this);
 
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        HashMap<String, String> map = mylist.get(position);
-        String activityName = map.get("ItemActivity");
-        Class activityClass = null;
-        try {
-            activityClass = Class.forName(activityName);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (activityClass != null) {
+        Class activityClass = mList.get(position).getActivityClass();
+        if (null != activityClass) {
             Intent mIntent = new Intent();
             mIntent.setClass(this, activityClass);
             startActivity(mIntent);
@@ -90,68 +86,44 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     public void addMVPDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "MVP Demo.");
-        map.put("ItemText", "一个采用MVP架构的例子");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.mvp.MVPActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("MVP Demo", "一个采用MVP架构的例子", MVPActivity.class);
+        mList.add(demoBean);
     }
 
     public void addRxJavaDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "RxJava Demo");
-        map.put("ItemText", "一个采用RxJava2.0进行响应式开发的例子");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.rxjava.RxJavaActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("RxJava Demo", "一个采用RxJava2.0进行响应式开发的例子", RxJavaActivity.class);
+        mList.add(demoBean);
     }
 
     public void addFrescoDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "Fresco Demo");
-        map.put("ItemText", "一个采用Fresco加载图片的例子");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.fresco.FrescoActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("Fresco Demo", "一个采用Fresco加载图片的例子", FrescoActivity.class);
+        mList.add(demoBean);
     }
 
     public void addAutoFocusDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "AutoFocus Demo");
-        map.put("ItemText", "一个停止当前播放声音的功能");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.autofocus.AutoFocusActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("AutoFocus Demo", "一个停止当前播放声音的功能", AutoFocusActivity.class);
+        mList.add(demoBean);
     }
 
 
     public void addRetrofit2Demo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "Retrofit2 Demo");
-        map.put("ItemText", "一个使用Retrofit请求网络的例子");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("Retrofit2 Demo", "一个使用Retrofit请求网络的例子", Retrofit2Activity.class);
+        mList.add(demoBean);
     }
 
     public void addCameraDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "Camera Demo");
-        map.put("ItemText", "Camera录像，前后摄像头");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.camerademo.CameraActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("Camera Demo", "Camera录像，前后摄像头", CameraActivity.class);
+        mList.add(demoBean);
     }
 
     public void addDaggerDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "Daager2 Demo");
-        map.put("ItemText", "Daager2实例");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.dagger.DaggerActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("Daager2 Demo", "Daager2实例", DaggerActivity.class);
+        mList.add(demoBean);
     }
 
     public void addadapterDemo() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ItemTitle", "通用adapter Demo");
-        map.put("ItemText", "通用adapter实例");
-        map.put("ItemActivity", "com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity");
-        mylist.add(map);
+        DemoBean demoBean = new DemoBean("通用adapter Demo", "万能的通用通用adapter实例", ListViewAdapterActivity.class);
+        mList.add(demoBean);
     }
 
 }

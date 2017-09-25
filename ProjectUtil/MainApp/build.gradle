@@ -70,6 +70,8 @@ dependencies {
     //java注解
     compile 'org.glassfish:javax.annotation:10.0-b28'
     //dagger2--------------------------------------
+    //facebook的一个动画开源库
+    compile 'com.facebook.rebound:rebound:0.3.8'
 }
 repositories {
     mavenCentral()

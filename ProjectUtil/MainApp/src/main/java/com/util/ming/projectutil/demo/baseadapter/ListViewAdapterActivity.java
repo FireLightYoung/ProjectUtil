@@ -76,7 +76,7 @@ public class ListViewAdapterActivity extends Activity {
      */
     private void initView() {
         mListView = (ListView) findViewById(R.id.listView);
-//		mListView.setAdapter(mAdapterWithCommViewHolder);
-        mListView.setAdapter(mAdapterWithCommAdapter);
+		mListView.setAdapter(mAdapterWithCommViewHolder);
+//        mListView.setAdapter(mAdapterWithCommAdapter);
     }
 }

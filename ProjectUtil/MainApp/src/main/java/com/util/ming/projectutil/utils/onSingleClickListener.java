@@ -6,7 +6,7 @@ import android.view.View;
  * Created by ming on 17/8/14.
  */
 
-public abstract class NoDoubleClickListener implements View.OnClickListener {
+public abstract class onSingleClickListener implements View.OnClickListener {
 
     public static final int MIN_CLICK_DELAY_TIME = 800;
 
@@ -17,9 +17,9 @@ public abstract class NoDoubleClickListener implements View.OnClickListener {
         long currentClickTime = System.currentTimeMillis();
         if (currentClickTime - lastClickTime > MIN_CLICK_DELAY_TIME) {
             lastClickTime = currentClickTime;
-            onNoDoubleClick(view);
+            onSingleClick(view);
         }
     }
 
-    public abstract void onNoDoubleClick(View view);
+    public abstract void onSingleClick(View view);
 }
