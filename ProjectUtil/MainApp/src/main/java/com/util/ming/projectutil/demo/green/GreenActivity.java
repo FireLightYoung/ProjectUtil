@@ -58,4 +58,9 @@ public class GreenActivity extends BaseActivity implements View.OnClickListener 
     public void insertDao(Student student) {
 
     }
+
+
+    public Student searchDao(long number) {
+        return null;
+    }
 }

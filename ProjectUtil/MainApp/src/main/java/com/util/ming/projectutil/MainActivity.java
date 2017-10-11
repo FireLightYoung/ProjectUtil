@@ -20,6 +20,7 @@ import com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity;
 import com.util.ming.projectutil.demo.camerademo.CameraActivity;
 import com.util.ming.projectutil.demo.dagger.DaggerActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
+import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
@@ -83,6 +84,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addCameraDemo();
         addDaggerDemo();
         addadapterDemo();
+        addLayoutDemo();
     }
 
     public void addMVPDemo() {
@@ -123,6 +125,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addadapterDemo() {
         DemoBean demoBean = new DemoBean("通用adapter Demo", "万能的通用通用adapter实例", ListViewAdapterActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addLayoutDemo() {
+        DemoBean demoBean = new DemoBean("研究Layout Demo", "研究layout实例", LayoutDemoActivity.class);
         mList.add(demoBean);
     }
 

@@ -34,7 +34,8 @@ public class FrescoActivity extends BaseActivity {
     }
 
     public void setImage1() {
-        Uri uri = Uri.parse("https://raw.githubusercontent.com/facebook/fresco/gh-pages/static/logo.png");
+//        Uri uri = Uri.parse("https://raw.githubusercontent.com/facebook/fresco/gh-pages/static/logo.png");
+        Uri uri = Uri.parse("res:///"+R.drawable.dog);
         SimpleDraweeView1 = (SimpleDraweeView) findViewById(R.id.my_image_view);
         SimpleDraweeView1.setImageURI(uri);
     }
@@ -61,4 +62,5 @@ public class FrescoActivity extends BaseActivity {
         genericDraweeView = (GenericDraweeView) findViewById(R.id.my_GenericDraweeView_view);
         genericDraweeView.setImageURI(uri);
     }
+
 }

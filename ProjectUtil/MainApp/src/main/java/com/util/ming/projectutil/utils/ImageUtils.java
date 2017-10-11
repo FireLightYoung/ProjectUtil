@@ -2,6 +2,9 @@ package com.util.ming.projectutil.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.text.TextUtils;
+
+import java.io.File;
 
 /**
  * Created by ming on 16/12/15.
@@ -62,4 +65,29 @@ public class ImageUtils {
         return BitmapFactory.decodeFile(mPath, options);
     }
 
+    /**
+     * 判断该文件是否是图片
+     *
+     * @param imagePath 文件路径
+     * @return true 是图片 false 图片文件损坏
+     */
+    public static boolean isImage(String imagePath) {
+        if (TextUtils.isEmpty(imagePath)) {
+            return false;
+        }
+        File file = new File(imagePath);
+        if (!file.exists()) {
+            return false;
+        }
+        //只读取图片的宽高，不将该文件读取到内存中，目的是下方设置图片的宽高时会使用，加载图片更改成了fresco
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(imagePath, options);
+        if (options.mCancel || options.outWidth == -1
+                || options.outHeight == -1 || options.outWidth == 0 || options.outHeight == 0) {
+            //表示图片已损毁
+            return false;
+        }
+        return true;
+    }
 }
