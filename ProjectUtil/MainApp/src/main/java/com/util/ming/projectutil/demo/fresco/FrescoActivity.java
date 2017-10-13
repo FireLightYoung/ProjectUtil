@@ -3,7 +3,9 @@ package com.util.ming.projectutil.demo.fresco;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
@@ -31,11 +33,24 @@ public class FrescoActivity extends BaseActivity {
         setImage2();
         setImage3();
         setImage4();
+        CountDownTimer cu = new CountDownTimer(10000, 2000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                setImage1();
+                Log.i("yang", "millisUntilFinished=" + millisUntilFinished);
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        cu.start();
     }
 
     public void setImage1() {
 //        Uri uri = Uri.parse("https://raw.githubusercontent.com/facebook/fresco/gh-pages/static/logo.png");
-        Uri uri = Uri.parse("res:///"+R.drawable.dog);
+        Uri uri = Uri.parse("res:///" + R.drawable.dog);
         SimpleDraweeView1 = (SimpleDraweeView) findViewById(R.id.my_image_view);
         SimpleDraweeView1.setImageURI(uri);
     }
