@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 类注释
  *
- * @author Yann
+ * @author Yang
  * @date 2015-8-5 下午10:03:45
  */
 public class MyAdapterWithCommViewHolder extends BaseAdapter {

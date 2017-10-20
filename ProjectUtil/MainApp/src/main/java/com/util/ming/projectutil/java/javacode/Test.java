@@ -1,4 +1,4 @@
-package com.util.ming.projectutil.javacode;
+package com.util.ming.projectutil.java.javacode;
 
 import org.json.JSONException;
 import org.json.JSONObject;

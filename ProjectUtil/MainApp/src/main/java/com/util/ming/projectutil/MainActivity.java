@@ -19,8 +19,11 @@ import com.util.ming.projectutil.demo.autofocus.AutoFocusActivity;
 import com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity;
 import com.util.ming.projectutil.demo.camerademo.CameraActivity;
 import com.util.ming.projectutil.demo.dagger.DaggerActivity;
+import com.util.ming.projectutil.demo.fastjson.FastJsonActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
+import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
+import com.util.ming.projectutil.demo.listtype.ListTypeActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
@@ -84,7 +87,10 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addCameraDemo();
         addDaggerDemo();
         addadapterDemo();
+        addListTypeActivityDemo();
         addLayoutDemo();
+        addGsonDemo();
+        addFastJsonDemo();
     }
 
     public void addMVPDemo() {
@@ -130,6 +136,21 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addLayoutDemo() {
         DemoBean demoBean = new DemoBean("研究Layout Demo", "研究layout实例", LayoutDemoActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addGsonDemo() {
+        DemoBean demoBean = new DemoBean("研究Gson Demo", "研究Gson实例", GsonActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addFastJsonDemo() {
+        DemoBean demoBean = new DemoBean("研究FastJson Demo", "研究FastJson实例", FastJsonActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addListTypeActivityDemo() {
+        DemoBean demoBean = new DemoBean("研究ListType Demo", "研究ListType实例", ListTypeActivity.class);
         mList.add(demoBean);
     }
 

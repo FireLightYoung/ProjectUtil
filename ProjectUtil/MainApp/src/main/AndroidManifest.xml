@@ -59,6 +59,26 @@
         </activity>
         <activity android:name=".demo.layout.LayoutDemoActivity">
         </activity>
+        <activity
+            android:name=".demo.gsondemo.GsonActivity"
+            android:label="GsonActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.fastjson.FastJsonActivity"
+            android:label="FastJsonActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.listtype.ListTypeActivity"
+            android:label="ListTypeActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.recyclerdemo.RecylcerActivity"
+            android:label="RecylcerActivity"
+            android:launchMode="singleTop">
+        </activity>
     </application>
 
 </manifest>

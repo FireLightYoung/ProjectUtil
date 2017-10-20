@@ -14,10 +14,11 @@ import android.widget.TextView;
  * @author Yann
  * @date 2015-8-5 ????9:08:31
  */
-public class ViewHolder {
+public class ViewHolder implements View.OnClickListener{
     private SparseArray<View> mViews;
     private int mPosition;
     private View mConvertView;
+
 
     public View getConvertView() {
         return mConvertView;
@@ -75,6 +76,11 @@ public class ViewHolder {
         tv.setText(text);
 
         return this;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
 
