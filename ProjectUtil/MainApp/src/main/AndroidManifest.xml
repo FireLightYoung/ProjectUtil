@@ -3,7 +3,7 @@
           package="com.util.ming.projectutil">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name = "android.permission.GET_TASKS"/>
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -77,6 +77,42 @@
         <activity
             android:name=".demo.recyclerdemo.RecylcerActivity"
             android:label="RecylcerActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.sqldemo.SqlActivity"
+            android:label="SqlActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.drawdemo.DrawActivity"
+            android:label="DrawActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <!-- 以下5个是进行avtivity栈操作的demo -->
+        <activity
+            android:name=".demo.activitystack.AStackActivity"
+            android:label="AStackActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.activitystack.BStackActivity"
+            android:label="BStackActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.activitystack.CStackActivity"
+            android:label="CStackActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.activitystack.DStackActivity"
+            android:label="DStackActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.activitystack.EStackActivity"
+            android:label="EStackActivity"
             android:launchMode="singleTop">
         </activity>
     </application>

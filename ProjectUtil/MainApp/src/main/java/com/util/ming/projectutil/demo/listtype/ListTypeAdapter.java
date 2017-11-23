@@ -63,7 +63,10 @@ public class ListTypeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-
+        if (viewGroup.getChildCount() == position) {
+            // does things here
+            //小技巧，防止复杂布局中重复测量导致的重复调用position==0的情况
+        }
         /**
          * 不同类型的ViewHolder
          * */

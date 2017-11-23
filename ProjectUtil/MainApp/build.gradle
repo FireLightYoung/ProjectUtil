@@ -72,11 +72,12 @@ dependencies {
     compile 'com.google.dagger:dagger:2.4'
     compile 'org.glassfish:javax.annotation:10.0-b28'
     compile 'com.facebook.rebound:rebound:0.3.8'
-//    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    //    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     apt 'com.google.dagger:dagger-compiler:2.4'
     //fastjson
     compile 'com.alibaba:fastjson:1.2.39'
-    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
 }
 repositories {
     mavenCentral()

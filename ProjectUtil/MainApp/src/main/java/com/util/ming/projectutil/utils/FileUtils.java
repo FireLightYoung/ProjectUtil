@@ -21,9 +21,9 @@ import java.io.Reader;
 public class FileUtils {
 
     /**
-     * 将图片写入到磁盘
+     * 将写数据入到磁盘
      *
-     * @param img      图片数据流
+     * @param img      数据流
      * @param fileName 文件保存时的名称
      */
     public static void writeImageToDisk(String dirUrl, String fileName, byte[] img) throws IOException {
@@ -41,13 +41,7 @@ public class FileUtils {
         } catch (IOException e) {
             throw e;
         } finally {
-            if (fops != null) {
-                try {
-                    fops.close();
-                } catch (Exception e) {
-
-                }
-            }
+            CloseUtils.closeQuietly(fops);
         }
     }
 
@@ -74,14 +68,7 @@ public class FileUtils {
         } catch (IOException e) {
             throw e;
         } finally {
-            if (fops != null) {
-                try {
-                    fops.close();
-                } catch (Exception e) {
-
-                }
-
-            }
+            CloseUtils.closeQuietly(fops);
         }
     }
 
@@ -111,20 +98,8 @@ public class FileUtils {
         } catch (IOException e) {
             throw e;
         } finally {
-            if (baos != null) {
-                try {
-                    baos.close();
-                } catch (Exception e) {
-
-                }
-            }
-            if (is != null) {
-                try {
-                    is.close();
-                } catch (Exception e) {
-
-                }
-            }
+            CloseUtils.closeQuietly(baos);
+            CloseUtils.closeQuietly(is);
         }
         return str;
     }
@@ -153,28 +128,16 @@ public class FileUtils {
                 sb.append(data);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw e;
         } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+            CloseUtils.closeQuietly(reader);
+            CloseUtils.closeQuietly(br);
         }
         return sb.toString();
     }
 
     /**
-     * 复制gif图片
+     * 复制文件
      *
      * @param oldPath String 原文件路径 如：c:/fqf.txt
      * @param newPath String 复制后路径 如：f:/fqf.txt
@@ -189,7 +152,7 @@ public class FileUtils {
             File oldfile = new File(oldPath);
             inStream = new FileInputStream(oldfile); //读入原文件
             fs = new FileOutputStream(newPath);
-            byte[] buffer = new byte[1444];
+            byte[] buffer = new byte[1024];
             while ((byteread = inStream.read(buffer)) != -1) {
                 bytesum += byteread; //字节数 文件大小
                 fs.write(buffer, 0, byteread);
@@ -197,21 +160,8 @@ public class FileUtils {
         } catch (IOException e) {
             throw e;
         } finally {
-            if (inStream != null) {
-                try {
-                    inStream.close();
-                } catch (Exception e) {
-
-                }
-
-            }
-            if (fs != null) {
-                try {
-                    fs.close();
-                } catch (Exception e) {
-
-                }
-            }
+            CloseUtils.closeQuietly(inStream);
+            CloseUtils.closeQuietly(fs);
         }
 
     }
@@ -226,8 +176,8 @@ public class FileUtils {
         try {
             File file = new File(filePath);
             fis = new FileInputStream(file);
-            bos = new ByteArrayOutputStream(1000);
-            byte[] b = new byte[1000];
+            bos = new ByteArrayOutputStream(1024);
+            byte[] b = new byte[1024];
             int n;
             while ((n = fis.read(b)) != -1) {
                 bos.write(b, 0, n);
@@ -236,21 +186,8 @@ public class FileUtils {
         } catch (IOException e) {
             throw e;
         } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (Exception e) {
-
-                }
-            }
-            if (bos != null) {
-                try {
-                    bos.close();
-                } catch (Exception e) {
-
-                }
-            }
-
+            CloseUtils.closeQuietly(fis);
+            CloseUtils.closeQuietly(bos);
         }
         return buffer;
     }
@@ -286,27 +223,9 @@ public class FileUtils {
             } catch (IOException e) {
                 throw e;
             } finally {
-                if (instream != null) {
-                    try {
-                        instream.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (inputreader != null) {
-                    try {
-                        inputreader.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (buffreader != null) {
-                    try {
-                        buffreader.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+                CloseUtils.closeQuietly(instream);
+                CloseUtils.closeQuietly(inputreader);
+                CloseUtils.closeQuietly(buffreader);
             }
         }
 
@@ -336,13 +255,7 @@ public class FileUtils {
         } catch (IOException e) {
             throw e;
         } finally {
-            if (fOut != null) {
-                try {
-                    fOut.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+            CloseUtils.closeQuietly(fOut);
         }
     }
 }

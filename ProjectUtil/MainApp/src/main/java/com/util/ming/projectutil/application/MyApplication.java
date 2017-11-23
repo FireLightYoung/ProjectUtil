@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.util.ming.projectutil.MainActivity;
+import com.util.ming.projectutil.logutil.CrashHandler;
 import com.util.ming.projectutil.utils.ContextHelper;
 
 import java.lang.Thread.UncaughtExceptionHandler;
@@ -21,11 +22,16 @@ public class MyApplication extends Application {
         ContextHelper.init(getApplicationContext());
         Fresco.initialize(this);
 
-//        Thread.setDefaultUncaughtExceptionHandler(restartHandler); // 程序崩溃时触发线程  以下用来捕获程序崩溃异常
+        CrashHandler crashHandler= CrashHandler.getInstance();
+        crashHandler.init(this);
+
+
+        Thread.setDefaultUncaughtExceptionHandler(restartHandler); // 程序崩溃时触发线程  以下用来捕获程序崩溃异常
     }// 创建服务用于捕获崩溃异常
 
     private UncaughtExceptionHandler restartHandler = new UncaughtExceptionHandler() {
 
+        @Override
         public void uncaughtException(Thread thread, Throwable ex) {
             restartApp();//发生崩溃异常时,重启应用
         }

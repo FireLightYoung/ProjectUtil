@@ -1,17 +1,10 @@
 package com.util.ming.projectutil;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.util.ming.projectutil.activity.BaseActivity;
@@ -19,20 +12,19 @@ import com.util.ming.projectutil.demo.autofocus.AutoFocusActivity;
 import com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity;
 import com.util.ming.projectutil.demo.camerademo.CameraActivity;
 import com.util.ming.projectutil.demo.dagger.DaggerActivity;
+import com.util.ming.projectutil.demo.drawdemo.DrawActivity;
 import com.util.ming.projectutil.demo.fastjson.FastJsonActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
 import com.util.ming.projectutil.demo.listtype.ListTypeActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
+import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
+import com.util.ming.projectutil.demo.sqldemo.SqlActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.zip.Inflater;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     ListView listview;
@@ -79,8 +71,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addDrawActivityDemo();
+        addSQLActivityDemo();
         addMVPDemo();
         addRxJavaDemo();
+        addRecylcerActivityDemo();
         addFrescoDemo();
         addAutoFocusDemo();
         addRetrofit2Demo();
@@ -151,6 +146,21 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addListTypeActivityDemo() {
         DemoBean demoBean = new DemoBean("研究ListType Demo", "研究ListType实例", ListTypeActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addRecylcerActivityDemo() {
+        DemoBean demoBean = new DemoBean("研究Recylcer Demo", "研究Recylcer实例", RecylcerActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addSQLActivityDemo() {
+        DemoBean demoBean = new DemoBean("研究SQLITE Demo", "研究SQLITE实例", SqlActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addDrawActivityDemo() {
+        DemoBean demoBean = new DemoBean("研究触摸绘制 Demo", "研究触摸绘制实例", DrawActivity.class);
         mList.add(demoBean);
     }
 
