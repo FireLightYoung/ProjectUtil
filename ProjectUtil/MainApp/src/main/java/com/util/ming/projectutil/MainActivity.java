@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.util.ming.projectutil.activity.BaseActivity;
 import com.util.ming.projectutil.demo.autofocus.AutoFocusActivity;
 import com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity;
+import com.util.ming.projectutil.demo.bindservicedemo.ServiceDemoActivity;
+import com.util.ming.projectutil.demo.buuferknife.fastjson.BufferKnifeActivity;
 import com.util.ming.projectutil.demo.camerademo.CameraActivity;
 import com.util.ming.projectutil.demo.dagger.DaggerActivity;
 import com.util.ming.projectutil.demo.drawdemo.DrawActivity;
@@ -23,6 +25,7 @@ import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
 import com.util.ming.projectutil.demo.sqldemo.SqlActivity;
+import com.util.ming.projectutil.demo.zipdemo.ZipDemoActivity;
 
 import java.util.ArrayList;
 
@@ -71,6 +74,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addZipDemo();
+        addBufferKnifeDemo();
+        addServiceDemo();
         addDrawActivityDemo();
         addSQLActivityDemo();
         addMVPDemo();
@@ -161,6 +167,21 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addDrawActivityDemo() {
         DemoBean demoBean = new DemoBean("研究触摸绘制 Demo", "研究触摸绘制实例", DrawActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addServiceDemo() {
+        DemoBean demoBean = new DemoBean("研究service Demo", "研究service实例", ServiceDemoActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addBufferKnifeDemo() {
+        DemoBean demoBean = new DemoBean("研究BufferKnife Demo", "研究BufferKnife实例", BufferKnifeActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addZipDemo() {
+        DemoBean demoBean = new DemoBean("研究zip Demo", "研究zip实例", ZipDemoActivity.class);
         mList.add(demoBean);
     }
 

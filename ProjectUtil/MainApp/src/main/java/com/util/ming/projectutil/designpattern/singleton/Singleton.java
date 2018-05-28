@@ -1,6 +1,4 @@
-package com.util.ming.projectutil.singleton;
-
-import java.io.Serializable;
+package com.util.ming.projectutil.designpattern.singleton;
 
 /**
  * Created by ming on 17/8/21.

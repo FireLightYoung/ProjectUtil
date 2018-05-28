@@ -4,6 +4,11 @@ import java.nio.ByteBuffer;
 import java.util.UUID;
 
 public class CinHelper {
+    private CinHelper() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
     public static final String EmptyString = "";
     public static final String COMMA = ",";
     public static byte[] token;

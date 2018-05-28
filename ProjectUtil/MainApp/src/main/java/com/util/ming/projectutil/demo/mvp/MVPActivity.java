@@ -1,7 +1,10 @@
 package com.util.ming.projectutil.demo.mvp;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +16,10 @@ import com.util.ming.projectutil.activity.BaseActivity;
 import com.util.ming.projectutil.demo.mvp.Presenter.LoginPresenter;
 import com.util.ming.projectutil.demo.mvp.entity.User;
 import com.util.ming.projectutil.demo.mvp.view.ILoginView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by ming on 17/5/9.
@@ -30,12 +37,20 @@ public class MVPActivity extends BaseActivity implements ILoginView, View.OnClic
 
     LoginPresenter loginPresenter;
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp);
         initData();
         initView();
+        new Thread() {
+            @Override
+            public void run() {
+                method();
+            }
+        }.start();
+
     }
 
     private void initData() {
@@ -54,6 +69,38 @@ public class MVPActivity extends BaseActivity implements ILoginView, View.OnClic
         textview_message.setText("账号:zhangsan 密码 123");
         buttonLogin.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
+
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public void method() {
+        String a = "[\"[{\\\"fileName\\\":\\\"1001042869.txt\\\"},{\\\"messageAttachment\\\":\\\"82378127A0664F2989546C0B1FC8BFE4\\\",\\\"messageContent\\\":\\\"[图片]\\\",\\\"messageTo\\\":1001042869,\\\"messageFrom\\\":1001042870,\\\"messageId\\\":\\\"82378127A0664F2989546C0B1FC8BFE4\\\",\\\"messageType\\\":2,\\\"messageDirection\\\":1,\\\"sendTime\\\":1518070139000,\\\"messageStatus\\\":2},{\\\"messageFrom\\\":1001042870,\\\"messageContent\\\":\\\"星期四 14:08\\\",\\\"messageTo\\\":1001042869,\\\"messageId\\\":\\\"78941E9F3CC94D7DBB3C3E220CEEEE63\\\",\\\"sendTime\\\":1518070138000,\\\"messageType\\\":30}]\",\"[{\\\"fileName\\\":\\\"1001037758.txt\\\"},{\\\"messageAttachment\\\":\\\"AABA797F49D84D9E88A9390C63602FF5\\\",\\\"messageContent\\\":\\\"[图片]\\\",\\\"messageTo\\\":1001037758,\\\"messageFrom\\\":1001042870,\\\"messageId\\\":\\\"AABA797F49D84D9E88A9390C63602FF5\\\",\\\"messageType\\\":2,\\\"messageDirection\\\":1,\\\"sendTime\\\":1518070149000,\\\"messageStatus\\\":2},{\\\"messageFrom\\\":1001042870,\\\"messageContent\\\":\\\"星期四 14:09\\\",\\\"messageTo\\\":1001037758,\\\"messageId\\\":\\\"0A3FE2D3FFFA4971A831D76817B73F20\\\",\\\"sendTime\\\":1518070148000,\\\"messageType\\\":30}]\"]";
+//        a = a.replace("\\", "");
+        int messageType = 55;
+        try {
+            JSONArray object = new JSONArray(a);
+            for (int i = 0; i < object.length(); i++) {
+//                JSONObject jsonObject = object.getJSONObject(i);
+                String aaa = object.getString(i);
+
+
+                JSONArray ob1 = new JSONArray(aaa);
+                for (int j = 0; j < ob1.length(); j++) {
+                    JSONObject jsonObject = ob1.getJSONObject(j);
+                    int e = 0;
+                }
+//                object.remove(i);
+                int c = 0;
+                int d = 0;
+            }
+
+        } catch (
+                JSONException e)
+
+        {
+            e.printStackTrace();
+            int b = 0;
+        }
 
     }
 

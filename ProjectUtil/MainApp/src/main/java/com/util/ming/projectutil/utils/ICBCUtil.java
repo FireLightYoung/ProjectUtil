@@ -41,6 +41,10 @@ import java.util.regex.Pattern;
  */
 
 public class ICBCUtil {
+    private ICBCUtil() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
 
     // 应用程序的Context
     private static Context context = ContextHelper.getContext();

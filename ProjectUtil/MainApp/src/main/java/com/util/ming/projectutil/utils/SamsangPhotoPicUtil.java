@@ -17,6 +17,10 @@ import java.io.IOException;
  * 用于处理三星手机拍照存储的缩略图被旋转
  */
 public class SamsangPhotoPicUtil {
+    private SamsangPhotoPicUtil() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
 
     public static int readPictureDegree(String path) {
         ExifInterface exifInterface = null;

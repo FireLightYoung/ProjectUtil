@@ -17,6 +17,11 @@ import java.util.List;
  */
 
 public class ProcessUtil {
+    private ProcessUtil() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
     /**
      * 获取当前系统中的进程
      *

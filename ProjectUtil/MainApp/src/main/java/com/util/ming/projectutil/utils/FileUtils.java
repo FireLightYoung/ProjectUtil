@@ -19,6 +19,10 @@ import java.io.Reader;
  * 文件工具类
  */
 public class FileUtils {
+    private FileUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
 
     /**
      * 将写数据入到磁盘

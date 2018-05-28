@@ -11,6 +11,8 @@ import java.io.Closeable;
 public class CloseUtils {
 
     private CloseUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
     }
 
     public static void closeQuietly(Closeable cloneable) {

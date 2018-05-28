@@ -40,6 +40,7 @@ public class User implements Cloneable {
         this.list = list;
     }
 
+    @Override
     public User clone() {
         try {
             User user = (User) super.clone();

@@ -83,6 +83,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         } else {
             ////-------------------------------可以自己处理，下面处理方式是关闭进程-----------------------------------------
             android.os.Process.killProcess(android.os.Process.myPid());
+//            restartApp();
         }
     }
 

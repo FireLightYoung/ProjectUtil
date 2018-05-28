@@ -11,6 +11,11 @@ import java.io.File;
  */
 public class ImageUtils {
 
+    private ImageUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
     /**
      * 根据一个路径，生成一个固定长宽的Bitmap来节省内存
      *

@@ -17,6 +17,11 @@ import java.util.ArrayList;
 
 public class LocalStringUtils {
 
+    private LocalStringUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
     /**
      * 将字符串转成URI
      *

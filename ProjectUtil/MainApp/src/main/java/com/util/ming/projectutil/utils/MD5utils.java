@@ -14,6 +14,11 @@ import java.security.NoSuchAlgorithmException;
  * Created by ming on 16/12/15.
  */
 public class MD5utils {
+    private MD5utils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
     /**
      * 默认的密码字符串组合，用来将字节转换成 16 进制表示的字符
      */
