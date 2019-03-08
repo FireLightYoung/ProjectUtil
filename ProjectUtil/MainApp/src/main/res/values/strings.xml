@@ -3,4 +3,11 @@
     <string name="yes">是</string>
     <string name="no">否</string>
     <string name="json">{"name": "张三","number": "100001","study":[{"studyName": "语文"},{"studyName": "数学"},{"studyName": "英语"}]}</string>
+    <string name="title_activity_drawer_layout_demo">DrawerLayoutDemoActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

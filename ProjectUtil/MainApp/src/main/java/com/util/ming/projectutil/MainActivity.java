@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.util.ming.projectutil.activity.BaseActivity;
 import com.util.ming.projectutil.demo.autofocus.AutoFocusActivity;
 import com.util.ming.projectutil.demo.baseadapter.ListViewAdapterActivity;
@@ -20,6 +21,7 @@ import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
 import com.util.ming.projectutil.demo.listtype.ListTypeActivity;
+import com.util.ming.projectutil.demo.lottie.LottieAndroidActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
 import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
@@ -37,9 +39,19 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        testLogger();
         initData();
         initView();
         initEvent();
+    }
+
+    private void testLogger() {
+        Logger.d("debug");
+        Logger.e("error");
+        Logger.w("warning");
+        Logger.v("verbose");
+        Logger.i("information");
+        Logger.wtf("What a Terrible Failure");
     }
 
     private void initData() {
@@ -92,6 +104,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addLayoutDemo();
         addGsonDemo();
         addFastJsonDemo();
+        addLottieDemo();
     }
 
     public void addMVPDemo() {
@@ -182,6 +195,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addZipDemo() {
         DemoBean demoBean = new DemoBean("研究zip Demo", "研究zip实例", ZipDemoActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addLottieDemo() {
+        DemoBean demoBean = new DemoBean("研究LottieAndroid Demo", "研究LottieAndroid实例", LottieAndroidActivity.class);
         mList.add(demoBean);
     }
 

@@ -10,6 +10,22 @@ public class JavaDemo {
 
 
     public static void main(String[] args) {
+        method2();
+    }
+
+    private static void method2() {
+        String s = "123";
+        s = null;
+        method3(s);
+    }
+
+    private static void method3(String s) {
+        assert s != null : "s 不能是null";
+        System.out.println(s);
+    }
+
+
+    private static void method1() {
         JavaDemo mDemo = new JavaDemo();
 
         System.out.println("thread=a=" + Thread.currentThread().getName());

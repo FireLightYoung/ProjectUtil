@@ -12,6 +12,7 @@ import com.util.ming.projectutil.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by ming on 17/12/6.
@@ -25,12 +26,22 @@ public class BufferKnifeDemoFragment extends Fragment {
     @BindView(R.id.btn_buffer_fragment)
     Button mButton;
 
+    Unbinder mUnbinder;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bufferknife, container, false);
         //初始化bufferKnife
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         // TODO Use fields...
         return view;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
+        }
     }
 }

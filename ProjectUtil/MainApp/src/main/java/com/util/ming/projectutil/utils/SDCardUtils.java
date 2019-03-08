@@ -18,6 +18,29 @@ public class SDCardUtils {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
+
+    //当使用外部存储时，必须检查外部存储的可用性。
+
+    // 读/写检查
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    // 只读检查
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+
     /**
      * 判断SDCard是否可用
      *

@@ -3,7 +3,7 @@ package com.util.ming.projectutil.demo.retrofitdemo;
 /**
  * PhoneResult
  *
- * @author yuzhentao
+ * @author
  */
 public class gitmodel {
 

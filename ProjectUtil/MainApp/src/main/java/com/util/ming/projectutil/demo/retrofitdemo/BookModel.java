@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * PhoneResult
  *
- * @author yuzhentao
+ * @author
  */
 public class BookModel {
 

@@ -133,10 +133,18 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
         <activity
             android:name=".demo.zipdemo.ZipDemoActivity"
             android:label="ZipDemoActivity"
             android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".demo.drawerLayout.DrawerLayoutDemoActivity"
+            android:label="@string/title_activity_drawer_layout_demo"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".demo.lottie.LottieAndroidActivity">
         </activity>
     </application>
 
