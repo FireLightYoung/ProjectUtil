@@ -16,13 +16,16 @@ import com.util.ming.projectutil.demo.buuferknife.fastjson.BufferKnifeActivity;
 import com.util.ming.projectutil.demo.camerademo.CameraActivity;
 import com.util.ming.projectutil.demo.dagger.DaggerActivity;
 import com.util.ming.projectutil.demo.drawdemo.DrawActivity;
+import com.util.ming.projectutil.demo.eventbus.EventActivity;
 import com.util.ming.projectutil.demo.fastjson.FastJsonActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
 import com.util.ming.projectutil.demo.listtype.ListTypeActivity;
 import com.util.ming.projectutil.demo.lottie.LottieAndroidActivity;
+import com.util.ming.projectutil.demo.luban.LubanActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
+import com.util.ming.projectutil.demo.permission.PerssionActivity;
 import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
@@ -39,7 +42,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        testLogger();
+        //testLogger();
         initData();
         initView();
         initEvent();
@@ -105,6 +108,24 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addGsonDemo();
         addFastJsonDemo();
         addLottieDemo();
+        addEventBusDemo();
+        addLubanBusDemo();
+        addperssionBusDemo();
+    }
+
+    private void addperssionBusDemo() {
+        DemoBean demoBean = new DemoBean("权限处理 Demo", "一个动态申请权限的例子", PerssionActivity.class);
+        mList.add(demoBean);
+    }
+
+    private void addLubanBusDemo() {
+        DemoBean demoBean = new DemoBean("Luban Demo", "一个采用鲁班压缩的例子", LubanActivity.class);
+        mList.add(demoBean);
+    }
+
+    private void addEventBusDemo() {
+        DemoBean demoBean = new DemoBean("EventBus Demo", "一个采用EventBus架构的例子", EventActivity.class);
+        mList.add(demoBean);
     }
 
     public void addMVPDemo() {
