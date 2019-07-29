@@ -17,7 +17,14 @@ public enum SingletonEnum {
     }
 
     public int method3() {
-
+        System.out.println("INSTANCE.method3");
         return 0;
+    }
+
+    public static void main(String args[]) {
+        SingletonEnum instance = SingletonEnum.INSTANCE;
+        SingletonEnum instance2 = SingletonEnum.INSTANCE;
+        SingletonEnum.INSTANCE.method3();
+        System.out.println(instance == instance2);
     }
 }
