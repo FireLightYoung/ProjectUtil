@@ -20,6 +20,7 @@ import com.util.ming.projectutil.demo.eventbus.EventActivity;
 import com.util.ming.projectutil.demo.fastjson.FastJsonActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
+import com.util.ming.projectutil.demo.jishiqi.CountTimerActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
 import com.util.ming.projectutil.demo.listtype.ListTypeActivity;
 import com.util.ming.projectutil.demo.lottie.LottieAndroidActivity;
@@ -89,6 +90,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addCountTimerDemo();
         addZipDemo();
         addBufferKnifeDemo();
         addServiceDemo();
@@ -221,6 +223,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addLottieDemo() {
         DemoBean demoBean = new DemoBean("研究LottieAndroid Demo", "研究LottieAndroid实例", LottieAndroidActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addCountTimerDemo() {
+        DemoBean demoBean = new DemoBean("研究计数器 Demo", "研究计数器实例", CountTimerActivity.class);
         mList.add(demoBean);
     }
 

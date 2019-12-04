@@ -16,7 +16,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true">
-
+        <activity android:name=".demo.jishiqi.CountTimerActivity">
+        </activity>
         <activity
             android:name=".demo.eventbus.EventActivity"
             android:label="@string/title_activity_event">

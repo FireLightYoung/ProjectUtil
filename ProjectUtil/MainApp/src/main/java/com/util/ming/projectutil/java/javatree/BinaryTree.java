@@ -1,4 +1,4 @@
-package com.util.ming.projectutil.javademo.javatree;
+package com.util.ming.projectutil.java.javatree;
 
 /**
  * Created by ming on 17/12/14.

@@ -6,6 +6,9 @@ package com.util.ming.projectutil.utils;
  * https://blog.csdn.net/black_bird_cn/article/details/80171652
  */
 public class BitwiseUtil {
+    private BitwiseUtil() {
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
 
     /**
      * 指定位置清零
