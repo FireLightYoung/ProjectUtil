@@ -24,6 +24,7 @@ public class Son extends Father {
     }
 
     public Son() {
+        super();
         System.out.println("加载子类构造方法");
     }
 }
