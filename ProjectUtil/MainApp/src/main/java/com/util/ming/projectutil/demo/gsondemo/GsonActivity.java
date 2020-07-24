@@ -1,5 +1,6 @@
 package com.util.ming.projectutil.demo.gsondemo;
 
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -51,7 +52,6 @@ public class GsonActivity extends BaseActivity implements View.OnClickListener {
     private void initView() {
 
         textview = (TextView) findViewById(R.id.textView_gson);
-
     }
 
     private void initEvent() {

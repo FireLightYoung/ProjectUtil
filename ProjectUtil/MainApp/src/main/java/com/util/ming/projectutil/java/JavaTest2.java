@@ -1,4 +1,4 @@
-package com.util.ming.projectutil;
+package com.util.ming.projectutil.java;
 
 import java.io.File;
 import java.io.FileInputStream;

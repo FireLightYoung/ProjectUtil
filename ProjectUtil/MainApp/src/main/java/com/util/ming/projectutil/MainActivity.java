@@ -18,6 +18,7 @@ import com.util.ming.projectutil.demo.dagger.DaggerActivity;
 import com.util.ming.projectutil.demo.drawdemo.DrawActivity;
 import com.util.ming.projectutil.demo.eventbus.EventActivity;
 import com.util.ming.projectutil.demo.fastjson.FastJsonActivity;
+import com.util.ming.projectutil.demo.feinnodemo.player.FeinnoPlayerActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
 import com.util.ming.projectutil.demo.jishiqi.CountTimerActivity;
@@ -31,6 +32,7 @@ import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
 import com.util.ming.projectutil.demo.sqldemo.SqlActivity;
+import com.util.ming.projectutil.demo.videoviewdemo.VideoViewDemoActivity;
 import com.util.ming.projectutil.demo.zipdemo.ZipDemoActivity;
 
 import java.util.ArrayList;
@@ -90,6 +92,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addVideoViewDemo();
         addCountTimerDemo();
         addZipDemo();
         addBufferKnifeDemo();
@@ -113,6 +116,12 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         addEventBusDemo();
         addLubanBusDemo();
         addperssionBusDemo();
+        addFeinnoPlayerDemo();
+    }
+
+    private void addFeinnoPlayerDemo() {
+        DemoBean demoBean = new DemoBean("播放器", "一个集成播放器的例子", FeinnoPlayerActivity.class);
+        mList.add(demoBean);
     }
 
     private void addperssionBusDemo() {
@@ -228,6 +237,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addCountTimerDemo() {
         DemoBean demoBean = new DemoBean("研究计数器 Demo", "研究计数器实例", CountTimerActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addVideoViewDemo() {
+        DemoBean demoBean = new DemoBean("播放器 Demo", "研究播放器实例", VideoViewDemoActivity.class);
         mList.add(demoBean);
     }
 

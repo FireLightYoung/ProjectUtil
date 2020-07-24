@@ -5,6 +5,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import com.util.ming.projectutil.R;
 import com.util.ming.projectutil.activity.BaseActivity;
@@ -21,6 +22,7 @@ public class RecylcerActivity extends BaseActivity implements View.OnClickListen
     RecyclerView mRecyclerView;
     RecyclerAdapter mAdapter;
     List<RecylcerBean> mData;
+    Button recylcer_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,8 @@ public class RecylcerActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void initView() {
-
+        recylcer_btn = (Button) findViewById(R.id.recylcer_btn);
+        recylcer_btn.setOnClickListener(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.activity_recylcer_rv);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         mAdapter = new RecyclerAdapter(this, mData);
@@ -58,6 +61,13 @@ public class RecylcerActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.recylcer_btn:
+//                RecylcerBean company = new RecylcerBean("新加入--===", "999");
+//
+//                mData.add(1, company);
+                mAdapter.notifyItemInserted(1);
+
+                break;
         }
     }
 }

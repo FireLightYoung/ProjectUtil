@@ -1,6 +1,7 @@
 package com.util.ming.projectutil.java;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by ming on 17/8/21.
@@ -10,7 +11,7 @@ public class JavaDemo {
 
 
     public static void main(String[] args) {
-        method2();
+        method7();
     }
 
     private static void method2() {
@@ -66,5 +67,41 @@ public class JavaDemo {
         }
         System.out.println("恢复");
         thread.resume();
+    }
+
+    public static void method5() {
+        long time = System.currentTimeMillis();
+        System.out.println(time);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long time1 = System.currentTimeMillis();
+        System.out.println(time1);
+    }
+
+    public static void method6() {
+        String aaa = null;
+        if ("".equals(aaa)) {
+            System.out.println("123");
+
+        } else {
+            System.out.println("321");
+
+        }
+    }
+
+    public static void method7() {
+        HashMap<Integer, String> hashMap = new HashMap<>();
+
+        hashMap.put(1, "a");
+        hashMap.put(1, "b");
+        hashMap.put(1, "c");
+        hashMap.put(1, "d");
+        hashMap.put(1, "e");
+        System.out.println(hashMap.get(1));
+
+
     }
 }

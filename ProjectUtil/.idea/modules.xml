@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MainApp/MainApp.iml" filepath="$PROJECT_DIR$/MainApp/MainApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProjectUtil.iml" filepath="$PROJECT_DIR$/ProjectUtil.iml" />
-      <module fileurl="file://$PROJECT_DIR$/swipebacklayout/swipebacklayout.iml" filepath="$PROJECT_DIR$/swipebacklayout/swipebacklayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MainApp/MainApp.iml" filepath="$PROJECT_DIR$/MainApp/MainApp.iml" group="ProjectUtil/MainApp" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectUtil.iml" filepath="$PROJECT_DIR$/ProjectUtil.iml" group="ProjectUtil" />
+      <module fileurl="file://$PROJECT_DIR$/swipebacklayout/swipebacklayout.iml" filepath="$PROJECT_DIR$/swipebacklayout/swipebacklayout.iml" group="ProjectUtil/swipebacklayout" />
     </modules>
   </component>
 </project>

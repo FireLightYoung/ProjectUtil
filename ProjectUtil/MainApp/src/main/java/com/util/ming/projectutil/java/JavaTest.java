@@ -1,6 +1,5 @@
-package com.util.ming.projectutil;
+package com.util.ming.projectutil.java;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
