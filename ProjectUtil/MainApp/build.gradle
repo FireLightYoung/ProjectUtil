@@ -55,6 +55,7 @@ dependencies {
 
     //swipebacklayout
     compile project(path: ':swipebacklayout')
+    compile project(path: ':Animationlib')
 
     //retrofit
 

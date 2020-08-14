@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.animationlib.AnimationDemoActivity;
 import com.orhanobut.logger.Logger;
 import com.util.ming.projectutil.activity.BaseActivity;
 import com.util.ming.projectutil.demo.autofocus.AutoFocusActivity;
@@ -92,6 +93,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addAnimationDemo();
         addVideoViewDemo();
         addCountTimerDemo();
         addZipDemo();
@@ -242,6 +244,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addVideoViewDemo() {
         DemoBean demoBean = new DemoBean("播放器 Demo", "研究播放器实例", VideoViewDemoActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addAnimationDemo() {
+        DemoBean demoBean = new DemoBean("动画 Demo", "研究动画实例", AnimationDemoActivity.class);
         mList.add(demoBean);
     }
 
