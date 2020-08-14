@@ -1,1 +1,2 @@
+include ': Animationlib'
 include ':MainApp', ':swipebacklayout'
