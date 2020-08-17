@@ -3,7 +3,9 @@
     package="com.example.animationlib">
 
     <application>
-        <activity android:name=".AnimationDemoActivity"></activity>
+        <activity
+            android:name=".AnimationDemoActivity"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>
