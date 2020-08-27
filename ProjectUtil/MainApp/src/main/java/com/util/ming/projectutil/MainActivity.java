@@ -22,6 +22,9 @@ import com.util.ming.projectutil.demo.fastjson.FastJsonActivity;
 import com.util.ming.projectutil.demo.feinnodemo.player.FeinnoPlayerActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
+import com.util.ming.projectutil.demo.ijkdemo.IjkDemo2Activity;
+import com.util.ming.projectutil.demo.ijkdemo.IjkDemoActivity;
+import com.util.ming.projectutil.demo.imageselectdemo.ImageSelectorDemoActivity;
 import com.util.ming.projectutil.demo.jishiqi.CountTimerActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
 import com.util.ming.projectutil.demo.listtype.ListTypeActivity;
@@ -93,6 +96,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addImageSelectorDemo();
+        addijkDemo();
         addAnimationDemo();
         addVideoViewDemo();
         addCountTimerDemo();
@@ -249,6 +254,16 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addAnimationDemo() {
         DemoBean demoBean = new DemoBean("动画 Demo", "研究动画实例", AnimationDemoActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addijkDemo() {
+        DemoBean demoBean = new DemoBean("ijk Demo", "研究ijk实例", IjkDemo2Activity.class);
+        mList.add(demoBean);
+    }
+
+    public void addImageSelectorDemo() {
+        DemoBean demoBean = new DemoBean("ImageSelector Demo", "研究知乎的文件选择器实例", ImageSelectorDemoActivity.class);
         mList.add(demoBean);
     }
 
