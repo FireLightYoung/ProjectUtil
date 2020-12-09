@@ -87,6 +87,10 @@
             android:label="ListTypeActivity"
             android:launchMode="singleTop" />
         <activity
+            android:name=".demo.recycermanager.RecylcerManagerActivity"
+            android:label="RecylcerActivity"
+            android:launchMode="singleTop" />
+        <activity
             android:name=".demo.recyclerdemo.RecylcerActivity"
             android:label="RecylcerActivity"
             android:launchMode="singleTop" />

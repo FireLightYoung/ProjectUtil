@@ -32,6 +32,7 @@ import com.util.ming.projectutil.demo.lottie.LottieAndroidActivity;
 import com.util.ming.projectutil.demo.luban.LubanActivity;
 import com.util.ming.projectutil.demo.mvp.MVPActivity;
 import com.util.ming.projectutil.demo.permission.PerssionActivity;
+import com.util.ming.projectutil.demo.recycermanager.RecylcerManagerActivity;
 import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
@@ -96,6 +97,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addRecylcerManagerActivityDemo();
         addImageSelectorDemo();
         addijkDemo();
         addAnimationDemo();
@@ -209,6 +211,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addRecylcerActivityDemo() {
         DemoBean demoBean = new DemoBean("研究Recylcer Demo", "研究Recylcer实例", RecylcerActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addRecylcerManagerActivityDemo() {
+        DemoBean demoBean = new DemoBean("研究Recylcer自定义layoutManager", "研究Recylcer自定义layoutManager实例", RecylcerManagerActivity.class);
         mList.add(demoBean);
     }
 

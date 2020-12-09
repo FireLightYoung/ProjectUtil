@@ -1,5 +1,7 @@
 package com.util.ming.projectutil.java;
 
+import android.util.Log;
+
 public class JavaTest3 {
 
     public static void main(String[] args) {

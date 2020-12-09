@@ -10,6 +10,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        classpath "com.android.databinding:dataBinder:1.0-rc1"
         //添加apt插件   , bufferKnife也需要这个插件
 //        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 
