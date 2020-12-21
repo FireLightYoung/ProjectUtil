@@ -23,7 +23,6 @@ import com.util.ming.projectutil.demo.feinnodemo.player.FeinnoPlayerActivity;
 import com.util.ming.projectutil.demo.fresco.FrescoActivity;
 import com.util.ming.projectutil.demo.gsondemo.GsonActivity;
 import com.util.ming.projectutil.demo.ijkdemo.IjkDemo2Activity;
-import com.util.ming.projectutil.demo.ijkdemo.IjkDemoActivity;
 import com.util.ming.projectutil.demo.imageselectdemo.ImageSelectorDemoActivity;
 import com.util.ming.projectutil.demo.jishiqi.CountTimerActivity;
 import com.util.ming.projectutil.demo.layout.LayoutDemoActivity;
@@ -35,6 +34,7 @@ import com.util.ming.projectutil.demo.permission.PerssionActivity;
 import com.util.ming.projectutil.demo.recycermanager.RecylcerManagerActivity;
 import com.util.ming.projectutil.demo.recyclerdemo.RecylcerActivity;
 import com.util.ming.projectutil.demo.retrofitdemo.Retrofit2Activity;
+import com.util.ming.projectutil.demo.flutter.FlutterDemoActivity;
 import com.util.ming.projectutil.demo.rxjava.RxJavaActivity;
 import com.util.ming.projectutil.demo.sqldemo.SqlActivity;
 import com.util.ming.projectutil.demo.videoviewdemo.VideoViewDemoActivity;
@@ -97,6 +97,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
      * 添加demo
      */
     public void addDemo() {
+        addRNDemo();
         addRecylcerManagerActivityDemo();
         addImageSelectorDemo();
         addijkDemo();
@@ -271,6 +272,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     public void addImageSelectorDemo() {
         DemoBean demoBean = new DemoBean("ImageSelector Demo", "研究知乎的文件选择器实例", ImageSelectorDemoActivity.class);
+        mList.add(demoBean);
+    }
+
+    public void addRNDemo() {
+        DemoBean demoBean = new DemoBean("Flutter Demo", "研究React Native", FlutterDemoActivity.class);
         mList.add(demoBean);
     }
 

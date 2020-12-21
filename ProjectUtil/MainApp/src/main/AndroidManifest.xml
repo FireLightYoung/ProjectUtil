@@ -21,7 +21,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".demo.imageselectdemo.ImageSelectorDemoActivity"></activity>
+        <activity
+            android:name=".demo.flutter.FlutterDemoActivity"
+            android:label="RNActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".demo.imageselectdemo.ImageSelectorDemoActivity" />
         <activity android:name=".demo.jishiqi.CountTimerActivity" />
         <activity
             android:name=".demo.eventbus.EventActivity"
